@@ -100,12 +100,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
         opacity: 0,
         },
     };
-
     const commonTransition = { type: "spring", duration: 0.05 };
 
-  
-
-export function HamburgerMenu(props) {
+export function HamburgerMenu() {
 
     const [isOpen, setOpen] = useState(false);
     const toggleMenu =() => {
@@ -113,39 +110,39 @@ export function HamburgerMenu(props) {
     }
 
     return (
-    <HamburgerMenuContainer>
-      <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
-      <MenuContainer
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        variants={menuVariants}
-        transition={menuTransition}
-      >
-        <TopContainer>
-          <LoginButton
-            initial={false}
-            animate={isOpen ? "show" : "hide"}
-            variants={commonVariants}
-            transition={commonTransition}
-          >
-            <IconContainer>
-              <FontAwesomeIcon icon={faUserCircle} />
-            </IconContainer>
-            LOGIN
-          </LoginButton>
-          <LoginButton
-            initial={false}
-            animate={isOpen ? "show" : "hide"}
-            variants={commonVariants}
-            transition={commonTransition}
-          >
-            JOIN US
-          </LoginButton>
-        </TopContainer>
-        <ContentContainer>
-          <NavMenu isOpen={isOpen} />
-        </ContentContainer>
-      </MenuContainer>
-    </HamburgerMenuContainer>
+        <HamburgerMenuContainer>
+            <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+            <MenuContainer
+                initial={false}
+                animate={isOpen ? "open" : "closed"}
+                variants={menuVariants}
+                transition={menuTransition}
+            >
+                <TopContainer>
+                    <LoginButton
+                        initial={false}
+                        animate={isOpen ? "show" : "hide"}
+                        variants={commonVariants}
+                        transition={commonTransition}
+                    >
+                        <IconContainer>
+                            <FontAwesomeIcon icon={faUserCircle} />
+                        </IconContainer>
+                        LOGIN
+                    </LoginButton>
+                    <LoginButton
+                        initial={false}
+                        animate={isOpen ? "show" : "hide"}
+                        variants={commonVariants}
+                        transition={commonTransition}
+                    >
+                        JOIN US
+                    </LoginButton>
+                </TopContainer>
+                <ContentContainer>
+                    <NavMenu isOpen={isOpen} />
+                </ContentContainer>
+            </MenuContainer>
+        </HamburgerMenuContainer>
     );
 }
